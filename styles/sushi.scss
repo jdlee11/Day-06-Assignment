@@ -1,0 +1,261 @@
+$light-blue: #47a3da;
+$light-gray: #c5d1d7;
+
+@mixin blue-font($size){
+  color: $light-blue;
+  font-family: "Open Sans", sans-serif;
+  font-size: $size + px;
+}
+%block {
+  color: $light-blue;
+  text-align: center;
+  .image {
+    width: 200px;
+    height: 110px;
+    background: $light-blue;
+    margin: 20px auto;
+    margin-bottom: 0;
+    display: inline-block;
+    i {
+      width: 85px;
+      height: 85px;
+      margin-top: 10px;
+      font-size: 36px;
+      border-radius: 50%;
+      background: white;
+      line-height: 85px;
+    }
+  }
+  .text h3 {
+    @include blue-font(12);
+    margin: 13px auto;
+  }
+  .text p {
+    margin: 0px 10px;
+    @include blue-font(9);
+  }
+}
+body {
+  margin: 0;
+}
+header div {
+  margin: 0 auto;
+  text-align: center;
+}
+.brand {
+  @include blue-font(6);
+  letter-spacing: 3px;
+}
+.page-name {
+  @include blue-font(20);
+}
+.header-menu {
+  list-style-type: none;
+  padding: 0px;
+  li {
+    display: inline;
+    @include blue-font(8);
+    i {
+      width: 16px;
+      height: 13px;
+      padding-top: 3px;
+      border: 2px solid;
+      border-radius: 50%;
+      &:hover {
+        width: 18px;
+        height: 15px;
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0px;
+  margin-bottom: 6px;
+  li {
+    display: inline-block;
+    background: #fff;
+    width: 19%;
+    height: 30px;
+    padding-top: 8px;
+    float: left;
+    text-align: center;
+    @include blue-font(14);
+    color: $light-gray;
+    border: 1px solid $light-gray;
+    border-bottom: 1px solid $light-blue;
+    &:hover {
+      color: $light-blue;
+      border: 1px solid $light-blue;
+      border-top-width: 3px;
+      border-bottom-color: #fff;
+      margin-bottom: -2px;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+.main-item {
+  @extend %block;
+}
+footer div {
+  text-align: center;
+  margin-top: 140px;
+  .footer-text {
+    @include blue-font(12);
+    span {
+      color: $light-gray;
+    }
+  }
+}
+
+// media queries for resizing
+@media (min-width: 510px){
+  // layout changes
+  .brand {
+    @include blue-font(9);
+  }
+  .page-name {
+    @include blue-font(24);
+  }
+  .header-menu {
+    li {
+      @include blue-font(11);
+      i {
+        width: 20px;
+        height: 16px;
+        padding-top: 4px;
+        &:hover {
+          width: 21px;
+          height: 17px;
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+  %block {
+    color: $light-blue;
+    text-align: left;
+    display: inline-block;
+    margin-left: 15px;
+    .image {
+      float: left;
+      text-align: center;
+      width: 200px;
+      height: 110px;
+      background: $light-blue;
+      margin: 20px auto;
+      margin-bottom: 0;
+      display: inline-block;
+      i {
+        width: 85px;
+        height: 85px;
+        margin-top: 10px;
+        font-size: 36px;
+        border-radius: 50%;
+        background: white;
+        line-height: 85px;
+      }
+    }
+    .text {
+      display: inline-block;
+      width: 50%;
+    }
+    .text h3 {
+      display: inline-block;
+      float: left;
+      @include blue-font(13);
+      margin-left: 10px;
+    }
+    .text p {
+      display: inline-block;
+      float: left;
+      @include blue-font(11);
+      margin-left: 10px;
+    }
+  }
+  .menu {
+    border-bottom: 1px solid $light-blue;
+    text-align: center;
+    height: 40px;
+    li {
+
+      width: 70px;
+      height: 30px;
+      padding-top: 8px;
+      float: none;
+    }
+  }
+}
+
+@media (min-width: 840px){
+  // layout changes
+  .brand {
+    @include blue-font(11);
+    text-align: left;
+    margin-left: 15px;
+  }
+  .page-name {
+    @include blue-font(25);
+    text-align: left;
+    margin-left: 15px;
+  }
+  .header-menu {
+    text-align: right;
+    margin-right: 130px;
+    margin-top: -50px;
+    margin-bottom: 54px;
+    li {
+      text-align: center;
+      @include blue-font(12);
+      i {
+        width: 26px;
+        height: 19px;
+        padding-top: 7px;
+        &:hover {
+          width: 28px;
+          height: 21px;
+          padding-top: 8px;
+        }
+      }
+    }
+  }
+  %block {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: top;
+    width: 29%;
+    .image {
+      float: none;
+      // margin: 20px auto;
+      margin-bottom: 0;
+      display: inline-block;
+    }
+    .text {
+      float: none;
+      text-align: left;
+      display: inline-block;
+      width: 90%;
+      h3 {
+        @include blue-font(16);
+      }
+      p {
+        @include blue-font(12);
+      }
+
+    }
+  }
+  .menu {
+    li {
+      width: 90px;
+      p {
+        display: inline;
+        margin-left: 7px;
+      }
+    }
+  }
+}
